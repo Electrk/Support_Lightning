@@ -25,7 +25,7 @@ These are the available settings.  It is **highly recommended** you use `changeL
 
 | Preference | Default Value | Comments |
 |------------|---------------|----------|
-| $Server::Lightning::DamageTimeout | 10000 | Players will still smoke if `BurnPlayers` is true, but no damage will be dealt. |
+| $Server::Lightning::DamageTimeout | 10000 | Players will still smoke if `BurnPlayers` is set to `true`, but no damage will be dealt. |
 | $Server::Lightning::DamagePlayers | true |  |
 | $Server::Lightning::DamageVehicles | true |  |
 | $Server::Lightning::DamageItems | true |  |
