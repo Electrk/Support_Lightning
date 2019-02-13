@@ -80,8 +80,8 @@ defaultLightningSetting ("BoltStartRadius", 20);           // How far away from 
 
 defaultLightningSetting ("StrikesPerMinute", 12);
 defaultLightningSetting ("StrikeWidth", 2.5);
-defaultLightningSetting ("StrikeRadius", 20);              // How far away from the strike will the lightning be able 
-                                                           // to hurt you.
+defaultLightningSetting ("StrikeRadius", 20);              // How far away from the strike the lightning will be able 
+                                                           // to hurt you
 
 defaultLightningSetting ("ChanceToHitTarget", 0.5);        // Chance an object has of getting struck when targetted by 
                                                            // the lightning
