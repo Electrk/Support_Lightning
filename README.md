@@ -43,6 +43,6 @@ These are the available settings.  It is **highly recommended** you use `changeL
 | $Server::Lightning::BoltStartRadius | 20 | How far away from the center the lightning starts to strike. |
 | $Server::Lightning::StrikesPerMinute | 12 |
 | $Server::Lightning::StrikeWidth | 2.5 |
-| $Server::Lightning::StrikeRadius | 20 | How far away from the strike will the lightning be able to hurt you. |
+| $Server::Lightning::StrikeRadius | 20 | How far away from the strike the lightning will be able to hurt you. |
 | $Server::Lightning::ChanceToHitTarget | 0.5 | Chance an object has of getting struck when targetted by the lightning. |
 | $Server::Lightning::UseFog | true | ??? |
