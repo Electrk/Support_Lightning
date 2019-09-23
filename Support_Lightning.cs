@@ -46,7 +46,7 @@ function destroyLightning ()
 
 	if ( %safety <= 0 )
 	{
-		error ("destroyLightning () - More than 1000 lightning objects!");
+		error ("ERROR: destroyLightning () - 1000 or more Lightning objects!");
 	}
 }
 
