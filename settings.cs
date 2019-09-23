@@ -17,11 +17,26 @@ function changeLightningSetting ( %prefName, %prefValue )
 	}
 
 	// color, fadeColor, and position require you to recreate the lightning object in order to take effect
-
 	if ( %prefName $= "Color"  ||  %prefName $= "FadeColor"  ||  %prefName $= "Position" )
 	{
-		createLightning (Lightning.getDataBlock ());
-		return;
+		switch$ ( %prefName )
+		{
+			case "Color":
+				Lightning.color = %prefValue;
+
+			case "FadeColor":
+				Lightning.fadeColor = %prefValue;
+
+			case "Position":
+				Lightning.position = %prefValue;
+		}
+
+		%oldLightning = Lightning;
+		%newLightning = Lightning.clone ();
+
+		%oldLightning.delete ();
+
+		return %newLightning;
 	}
 
 	switch$ ( %prefName )
