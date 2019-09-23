@@ -28,16 +28,38 @@ function createLightning ( %dataBlock )
 
 		useFog            = $Server::Lightning::UseFog;
 	};
+
 	MissionGroup.add (%lightning);
+
+	return %lightning;
 }
 
 function destroyLightning ()
 {
-	%i = 1000;  // juuuust in case
+	%safety = 1000;  // juuuust in case
 
-	while ( isObject (Lightning)  &&  %i > 0 )
+	while ( isObject (Lightning)  &&  %safety > 0 )
 	{
 		Lightning.delete ();
-		%i--;
+		%safety--;
 	}
+
+	if ( %safety <= 0 )
+	{
+		error ("destroyLightning () - More than 1000 lightning objects!");
+	}
+}
+
+// Clone current object (by McTwist)
+function SimObject::clone ( %this, %name )
+{
+	%this    = %this.getID ();
+	%oldName = %this.getName ();
+	%name    = %name !$= "" ? %name : %oldName;
+
+	%this.setName (__CLONE_OBJECT__);
+	%obj = new (%this.getClassName ()) (%name : __CLONE_OBJECT__);
+	%this.setName (%oldName);
+
+	return %obj;
 }
