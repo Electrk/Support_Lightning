@@ -36,17 +36,14 @@ function createLightning ( %dataBlock )
 
 function destroyLightning ()
 {
-	%safety = 1000;  // juuuust in case
-
-	while ( isObject (Lightning)  &&  %safety > 0 )
+	if ( isObject (Lightning) )
 	{
 		Lightning.delete ();
-		%safety--;
 	}
 
-	if ( %safety <= 0 )
+	if ( isObject (Lightning) )
 	{
-		error ("ERROR: destroyLightning () - 1000 or more Lightning objects!");
+		error ("ERROR: destroyLightning () - More than one Lightning object!");
 	}
 }
 
